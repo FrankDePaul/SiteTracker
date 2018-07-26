@@ -1,0 +1,85 @@
+@model ViewModel
+<!DOCTYPE html>
+<html>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a href="/"  role="/Index">Home</a>
+        <a href="/SiteList/1"  role="/Index">Back</a>
+    </nav>
+
+<body>
+    
+
+<div class="container">
+    <h4 >Name : @ViewBag.DisplaySite.Site_Name  </h4><br>
+    <h4 style="margin-bottom: 20px;">BTS Number :@ViewBag.DisplaySite.FourDigit_Number</h4>
+    <table class="table">
+        <thead>
+            <tr>
+            
+                <th scope="col">Site Number</th>
+                <th scope="col">ENB #</th>
+                <th scope="col">ENB2 #</th>
+                <th scope="col">Tech Name</th>
+                <th scope="col">Tech Phone</th>
+                <th scope="col">Lattitude</th>
+                <th scope="col">Longitude</th>
+            </tr>
+        </thead>
+        <tbody> 
+                <tr>
+                    <td scope="row">@ViewBag.DisplaySite.Site_Number</td>
+                    <td>@ViewBag.DisplaySite.Enb_Number</td>
+                    <td>@ViewBag.DisplaySite.Enb2_Number</td>
+                    <td>@ViewBag.DisplaySite.Tech_Name</td>
+                    <td>@ViewBag.DisplaySite.Tech_Phone</td>
+                    <td>@ViewBag.DisplaySite.Lattitude</td>
+                    <td>@ViewBag.DisplaySite.Longitude</td>
+                    <td><a href="https://www.google.com/maps/@@@ViewBag.DisplaySite.Lattitude,@ViewBag.DisplaySite.Longitude,15z" target="_blank"><img class="mapsIcon" src="~/images/google-maps-icon.png"></a></td>
+    
+                   
+                </tr>        
+        </tbody>
+    </table>
+</div>
+    <div id="map"></div>
+    
+    
+    
+
+
+
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: @ViewBag.DisplaySite.Lattitude, lng: @ViewBag.DisplaySite.Longitude};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 12, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+    </script>
+<script async defer 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3QrlKImZ33alxzm7IYkUrjATAqqLLqOI&callback=initMap" > </script>
+</script>
+
+<style>
+    .mapsIcon{
+        width: 40px;
+    }
+    #map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+    }
+
+</style>
+
+
+
+
+    </body>
+</html>
+
+

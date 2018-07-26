@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Search
+<header>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+</header>
+
+
+
+
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="nav-link" href="/AdminLogin">Admin</a>
+        <a href="/SiteList/1"  role="/SiteList/1">Site List</a>
+    </nav>
+
+        <div class="col-lg-6">
+            <h3 class="display-4">Site Tracker</h3>
+
+
+            <form asp-action="Search" asp-controller="Home" method="post">
+                <div class="form-group">                   
+                    <label for="Site_Numbers">Site Number: </label>
+                        <span class=" error" asp-validation-for="Site_Numbers">@TempData["Site_Number"] </span>
+                        <input type="text" placeholder="Enter a 6 Digit Site Number"  class="form-control form-control-sm" asp-for="Site_Numbers">
+                </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+        </div>

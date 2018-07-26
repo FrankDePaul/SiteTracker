@@ -1,0 +1,87 @@
+@model Site
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a href="/"  role="/Index">Home</a>
+        <a href="/EditSitePage"  role="/AddSitePage">Edit a Site</a>
+        <a href="/AddSitePage"  role="/AddSitePage">Add a Site</a>
+        <a href="/Logout"  role="/Logout">Logout</a>
+ 
+    </nav>
+
+
+         
+
+<div id="wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+            <h4 class="display-5">Update Site</h4>
+            @TempData["Error"]
+            <form asp-action="UpdateSite" asp-controller="Home" method="post">
+                <div class="form-group">
+                    <label for="Site_Name">Site Name:</label>
+                    <span class=" error" asp-validation-for="Site_Name"></span>
+                    <input type="text"  placeholder="Field can not be left empty"  value="@ViewBag.EditSite.Site_Name" class="form-control form-control-sm" asp-for="Site_Name">
+                </div>
+               <div class="form-group">
+                    
+                    <label for="FourDigit_Number">FourDigit_Number: @TempData["FourDigit_Number"]</label>
+                    <span class=" error" asp-validation-for="FourDigit_Number"></span>
+                    <input type="FourDigit_Number" placeholder="Enter a unique 4 digit BTS number. Field can't be empty" value="@ViewBag.EditSite.FourDigit_Number" class="form-control form-control-sm" asp-for="FourDigit_Number">
+                </div>
+                <div class="form-group">
+                    
+                    <label for="Site_Number">Site Number: @TempData["Site_Number"]</label>
+                    <span class=" error" asp-validation-for="Site_Number"></span>
+                    <input type="Site_Number" placeholder="Enter a unique 6 dgit site number. Field can't be empty" value="@ViewBag.EditSite.Site_Number" class="form-control form-control-sm" asp-for="Site_Number">
+                </div>
+                <div class="form-group">
+                    
+                    <label for="Enb_Number">Enb Number: @TempData["Enb_Number"]</label>
+                    <span class=" error" asp-validation-for="Enb_Number"></span>
+                    <input type="Enb_Number" placeholder="Enter a unique 6 dgit Enb number. Field can't be empty" value="@ViewBag.EditSite.Enb_Number" class="form-control form-control-sm" asp-for="Enb_Number">
+                </div>
+                <div class="form-group">
+                    
+                    <label for="Enb2_Number">Enb2 Number: @TempData["Enb2_Number"]</label>
+                    <span class=" error" asp-validation-for="Enb2_Number"></span>
+                    <input type="Enb2_Number" placeholder="Enter a unique 6 dgit Enb2 number. Field can't be empty" value="@ViewBag.EditSite.Enb2_Number" class="form-control form-control-sm" asp-for="Enb2_Number">
+                </div>
+                <div class="form-group">
+                    <label for="Tech_Name">Tech Name:</label>
+                    <span class=" error" asp-validation-for="Tech_Name"></span>
+                    <input type="text" placeholder="Field can not be left empty"  value="@ViewBag.EditSite.Tech_Name" class="form-control form-control-sm" asp-for="Tech_Name">
+                </div>
+                <div class="form-group">
+                    <label for="Tech_Phone">Tech Phone:</label>
+                    <span class=" error" asp-validation-for="Tech_Phone"></span>
+                    <input type="text" placeholder="Field can not be left empty" value="@ViewBag.EditSite.Tech_Phone" class="form-control form-control-sm" asp-for="Tech_Phone">
+                </div>
+
+
+
+ 
+
+                <div class="form-group">
+                    <label for="Lattitude">Lattitude:</label>
+                    <span class=" error" asp-validation-for="Lattitude"></span>
+                    <input type="Lattitude" placeholder="Field can not be left empty" value="@ViewBag.EditSite.Lattitude" class="form-control form-control-sm" asp-for="Lattitude">
+                </div>
+                <div class="form-group">
+                    <label for="Longitude">Longitude:</label>
+                    <span class=" error" asp-validation-for="Longitude"></span>
+                    <input type="Longitude" placeholder="Field can not be left empty" value="@ViewBag.EditSite.Longitude" class="form-control form-control-sm" asp-for="Longitude">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Edit</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+<style>
+input::-webkit-input-placeholder {
+   font-size: 11px;
+   padding-top: 3px;
+   color: black;
+   opacity: 10%;
+}
+</style>

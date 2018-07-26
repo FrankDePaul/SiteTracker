@@ -1,0 +1,41 @@
+
+@model Site
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a href="/"  role="/Index">Home</a>
+        <a href="/EditSitePage"  role="/AddSitePage">Edit a Site</a>
+        <a href="/AddSitePage"  role="/AddSitePage">Add a Site</a>
+ 
+    </nav>
+
+
+
+
+
+<div class="container">
+    <h3>Site Added Successfully</h3>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row">Site Name:    @Model.Site_Name</th>
+            </tr>
+            <tr>
+                <th scope="row">Site Number: @Model.Site_Number</th>
+            </tr>
+            <tr>
+                <th scope="row">Tech Name:    @Model.Tech_Name</th>
+            </tr>
+            <tr>
+                <th scope="row">Tech Phone: @Model.Tech_Phone</th>
+            </tr>
+            <tr>
+                <th scope="row">Lattitude:    @Model.Lattitude</th>
+            </tr>
+            <tr>
+                <th scope="row">Longitude: @Model.Longitude</th>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>

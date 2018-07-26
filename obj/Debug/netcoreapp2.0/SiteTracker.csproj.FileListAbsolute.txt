@@ -1,0 +1,11 @@
+/Users/mac/Desktop/SiteTracker/bin/Debug/netcoreapp2.0/SiteTracker.deps.json
+/Users/mac/Desktop/SiteTracker/bin/Debug/netcoreapp2.0/SiteTracker.runtimeconfig.json
+/Users/mac/Desktop/SiteTracker/bin/Debug/netcoreapp2.0/SiteTracker.runtimeconfig.dev.json
+/Users/mac/Desktop/SiteTracker/bin/Debug/netcoreapp2.0/SiteTracker.dll
+/Users/mac/Desktop/SiteTracker/bin/Debug/netcoreapp2.0/SiteTracker.pdb
+/Users/mac/Desktop/SiteTracker/obj/Debug/netcoreapp2.0/SiteTracker.csprojResolveAssemblyReference.cache
+/Users/mac/Desktop/SiteTracker/obj/Debug/netcoreapp2.0/SiteTracker.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/SiteTracker/obj/Debug/netcoreapp2.0/SiteTracker.AssemblyInfoInputs.cache
+/Users/mac/Desktop/SiteTracker/obj/Debug/netcoreapp2.0/SiteTracker.AssemblyInfo.cs
+/Users/mac/Desktop/SiteTracker/obj/Debug/netcoreapp2.0/SiteTracker.dll
+/Users/mac/Desktop/SiteTracker/obj/Debug/netcoreapp2.0/SiteTracker.pdb

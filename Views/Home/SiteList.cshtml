@@ -1,0 +1,47 @@
+@model ViewModel
+
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a href="/"  role="/Index">Home</a>
+        
+
+ 
+    </nav>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><a href="/SiteList/1">Site #</a></th>
+            <th><a href="/SiteList/2">Enb #</a></th>
+            <th><a href="/SiteList/3">Enb2 #</a></th>
+            <th><a href="/SiteList/4">Four Digit #</a></th>
+            <th><a href="/SiteList/5">Site Name</a></th>
+           
+          
+            
+           
+            <th scope="col">Tech Name</th>
+            <th scope="col">Tech Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach(var site in @ViewBag.AllSites )
+        {
+            <tr>
+                
+                <td><a href="/ShowSiteInfo/@site.Id">@site.Site_Number</a></td>
+                <td>@site.Enb_Number</td>
+                <td>@site.Enb2_Number</td>
+                <td>@site.FourDigit_Number</td>
+               
+
+                <td>@site.Site_Name</td>
+                <td>@site.Tech_Name</td>
+                <td>@site.Tech_Phone</td>
+            </tr>
+        }
+    </tbody>
+</table>
