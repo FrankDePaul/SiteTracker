@@ -14,15 +14,13 @@
         <a href="/SiteList/1"  role="/SiteList/1">Site List</a>
     </nav>
 
-        <div class="col-lg-6">
-            <h3 class="display-4">Site Tracker</h3>
-
-
-            <form asp-action="Search" asp-controller="Home" method="post">
+        <div class="col-lg-6">    
+            <h3 class="display-4">Site Tracker</h3>      
+            <form asp-action="Search2" asp-controller="Home" method="post">
                 <div class="form-group">                   
-                    <label for="Site_Numbers">Site Number: </label>
-                        <span class=" error" asp-validation-for="Site_Numbers">@TempData["Site_Number"] </span>
-                        <input type="text" placeholder="Enter a 6 Digit Site Number"  class="form-control form-control-sm" asp-for="Site_Numbers">
+                    <label for="SiteNumber">Site Number: </label>
+                        <span class=" error" asp-validation-for="SiteNumber">@TempData["Site_Number"] </span>
+                        <input type="text" placeholder="Enter a 4 or 6 Digit Site,ENB,ENB2 Number"  class="form-control form-control-sm" asp-for="SiteNumber">
                 </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

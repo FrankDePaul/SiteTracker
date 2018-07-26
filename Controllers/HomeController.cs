@@ -330,7 +330,7 @@ namespace SiteTracker.Controllers
         }
 
 
-
+// **********************************************SEARCHING FOR SITES**************************************************
 
 
         [HttpPost]
@@ -370,6 +370,59 @@ namespace SiteTracker.Controllers
             return View("Index",FormData);
             
         }
+
+        [HttpPost]
+        [Route("Search2")]
+        public IActionResult Search2(Search FormData)
+        {
+            if(FormData.SiteNumber >= 1000 &&  FormData.SiteNumber <= 9999)
+            {
+                Site siteFourDig = _context.Sites.SingleOrDefault(site=>site.FourDigit_Number == FormData.SiteNumber);
+                if(siteFourDig != null)
+                {
+                    ViewBag.DisplaySite = siteFourDig;
+                    return View("DisplaySite");
+                }
+                TempData["Site_Number"]="Site could not be found";
+                return View("Index");               
+            }
+
+
+
+            if(FormData.SiteNumber >= 100000 && FormData.SiteNumber <= 999999)
+            {
+                Site siteNumber = _context.Sites.SingleOrDefault(site=>site.Site_Number == FormData.SiteNumber);
+                if(siteNumber != null)
+                {
+                    ViewBag.DisplaySite = siteNumber;
+                    return View("DisplaySite");
+                }
+
+                Site enbNumber = _context.Sites.SingleOrDefault(site=>site.Enb_Number == FormData.SiteNumber);
+                if(enbNumber != null)
+                {
+                    ViewBag.DisplaySite = enbNumber;
+                    return View("DisplaySite");
+                }
+                Site enb2Number = _context.Sites.SingleOrDefault(site=>site.Enb2_Number == FormData.SiteNumber);
+                if(enb2Number != null)
+                {
+                    ViewBag.DisplaySite = enb2Number;
+                    return View("DisplaySite");
+                } 
+                TempData["Site_Number"]="Site could not be found";
+                return View("Index");           
+            }
+            TempData["Site_Number"]="Please enter a 4 or 6 digit site number";
+            return View("Index"); 
+
+            
+            
+        }
+
+
+
+
 
         [HttpGet]
         [Route("SiteList/{sort}")]

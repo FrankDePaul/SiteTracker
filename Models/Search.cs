@@ -15,6 +15,9 @@ namespace SiteTracker.Models
         [Range (100000,999999, ErrorMessage = "Site number must be 6 digits")]
         public int Site_Numbers {get; set;}
 
+   
+        public int SiteNumber {get; set;}
+
 
        
         

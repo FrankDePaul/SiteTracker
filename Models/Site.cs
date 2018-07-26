@@ -37,7 +37,9 @@ namespace SiteTracker.Models
         [Required]
         [Range (1000,9999, ErrorMessage = "Site number must be 4 digits")]
         public int FourDigit_Number {get; set;}
-
+        
+        [NotMapped]
+        public int Site_Numbers2 {get; set;}
 
 
 

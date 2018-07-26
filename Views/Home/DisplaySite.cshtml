@@ -5,40 +5,48 @@
        
     <nav class="navbar navbar-light bg-light justify-content-between">
         <a href="/"  role="/Index">Home</a>
-        <a href="/SiteList/1"  role="/Index">Back</a>
+        
+        <a href="https://www.google.com/maps/@@@ViewBag.DisplaySite.Lattitude,@ViewBag.DisplaySite.Longitude,15z" target="_blank"><img class="mapsIcon" src="~/images/google-maps-icon.png"></a>
+        <a href="/SiteList/1"  role="/Index">SiteList</a>
     </nav>
 
 <body>
     
 
 <div class="container">
-    <h4 >Name : @ViewBag.DisplaySite.Site_Name  </h4><br>
-    <h4 style="margin-bottom: 20px;">BTS Number :@ViewBag.DisplaySite.FourDigit_Number</h4>
+
     <table class="table">
         <thead>
             <tr>
-            
-                <th scope="col">Site Number</th>
+                <th>Name  @ViewBag.DisplaySite.Site_Name</th>
+                <th>BTS Number @ViewBag.DisplaySite.FourDigit_Number</th>
+                <th>Site Number @ViewBag.DisplaySite.Site_Number</th>
+                <th>Tech Name @ViewBag.DisplaySite.Tech_Name</th>
+            </tr>
+        </thead>
+    </table>
+
+
+   
+   
+    <table class="table">
+        <thead>
+            <tr>              
                 <th scope="col">ENB #</th>
-                <th scope="col">ENB2 #</th>
-                <th scope="col">Tech Name</th>
-                <th scope="col">Tech Phone</th>
+                <th scope="col">ENB2 #</th>                
                 <th scope="col">Lattitude</th>
                 <th scope="col">Longitude</th>
             </tr>
         </thead>
         <tbody> 
                 <tr>
-                    <td scope="row">@ViewBag.DisplaySite.Site_Number</td>
-                    <td>@ViewBag.DisplaySite.Enb_Number</td>
+                    
+                    <td scope="row" >@ViewBag.DisplaySite.Enb_Number</td>
                     <td>@ViewBag.DisplaySite.Enb2_Number</td>
-                    <td>@ViewBag.DisplaySite.Tech_Name</td>
-                    <td>@ViewBag.DisplaySite.Tech_Phone</td>
+                           
                     <td>@ViewBag.DisplaySite.Lattitude</td>
                     <td>@ViewBag.DisplaySite.Longitude</td>
-                    <td><a href="https://www.google.com/maps/@@@ViewBag.DisplaySite.Lattitude,@ViewBag.DisplaySite.Longitude,15z" target="_blank"><img class="mapsIcon" src="~/images/google-maps-icon.png"></a></td>
-    
-                   
+                  
                 </tr>        
         </tbody>
     </table>
